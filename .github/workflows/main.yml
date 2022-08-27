@@ -31,6 +31,8 @@ jobs:
         cd infra_project/
         # запустить написанные разработчиком тесты
         python manage.py test
+        echo ${{ secrets.DOCKER_USERNAME }}
+        echo ${{ secrets.DOCKER_PASSWORD }}
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
